@@ -2,6 +2,12 @@
 
 This repo contains my implementation of miniTT with parser.
 
+## Usage
+```
+stack build
+stack exec miniTT-exe [FILE]
+```
+
 ## Semantics
 
 ### Unit Elimination
@@ -43,3 +49,6 @@ There're minor changes to the original syntax (mainly for parsing purpose) :
 * `*` and `×` are allowed syntax for product type.
 
 * a complete program consists of a series of declaration (without an expression at the end).
+
+## Original Repo and Commit History
+[miniTT](https://github.com/KomaEc/Type-Systems)
