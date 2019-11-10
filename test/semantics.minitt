@@ -1,6 +1,6 @@
---id : ∀ a : U . a → a
---   = λ a . λ x . x
---;
+id : ∀ a : U . a → a
+   = λ a . λ x . x
+;
 
 bool : U 
      = Sum (True | False)

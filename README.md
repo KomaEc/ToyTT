@@ -8,6 +8,9 @@ stack build
 stack exec miniTT-exe [FILE]
 ```
 
+## Sample Code
+`semantics.minitt`, available in `test/` folder.
+
 ## Semantics
 
 ### Unit Elimination
