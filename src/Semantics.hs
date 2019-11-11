@@ -161,13 +161,13 @@ vsnd _               = throwError ValueNotPair
 app :: MonadError Errors m => Value -> Value -> m Value
 app (VLam fcls) v                           = inst fcls v
 app (VCaseFun (choices, rho)) (VConstr c v) = -- construct a reader monad Rho -> m a
-    let exp = fst . head $ filter (\ (x, _) -> x == c) choices
+    let exp = snd . head $ filter (\ (x, _) -> x == c) choices
     in  do
             val <- runReaderT (eval exp) rho
             app val v
 app (VCaseFun ccls) (VNeutral n)            = return . VNeutral $ NeuFun ccls n
 app (VNeutral n) v                          = return . VNeutral $ NeuApp n v
-app (VRecUnit v) VUnit                      = return v  -- defining equation for rec₁
+app (VRecUnit v) VZero                      = return v  -- defining equation for rec₁
 
 -- instantiates a function closure to a value
 inst :: MonadError Errors m => FunCls -> Value -> m Value
