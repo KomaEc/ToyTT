@@ -36,7 +36,7 @@ To resolve this, the language is added a premitive construct `rec₁` (the recur
 
 And in the case tree, choice of the form `c → M` is parsed into `rec₁ M` (and hence the 2nd retriction in syntax as listed below).
 
-### Identity Type (not implemented)
+### Identity Type (an incomplete branch)
 When I was trying to extend miniTT to handle identity type (with the usual J-eliminator, and the syntax is augmented with `J(_ & _ & _ & _ ...)` as a whole J-eliminator term), I found that it may be better if I use DeBruijn index (or locally nameless). Because when infering the type for `J` with predicate `c : ∀ x : A . ∀ y : A . ∀ p : x ≡A y . U` , we need to check that the base case has type `t = ∀ x : A . c x x reflₓ`. But I have trouble in creating such lambda term with only the value of `c` at hand.
 
 ## Syntax
@@ -58,7 +58,6 @@ There're minor changes to the original syntax (mainly for parsing purpose) :
 
 ## TODO
 * Use DeBrujin index.
-* Extend the checker to handle identity type.
 
 ## Original Repo and Commit History
 [miniTT](https://github.com/KomaEc/Type-Systems)
