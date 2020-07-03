@@ -1,4 +1,4 @@
-# miniTT
+# ToyTT
 
 This repo contains my implementation of miniTT with parser.
 
